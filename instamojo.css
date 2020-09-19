@@ -16,7 +16,7 @@ body{
 }
 .donate-form-text{
     background-color: white;
-    padding: 20px 3vw;
+    padding: 10px 3vw;
     text-decoration: none;
     display: block;
     text-align: center;
@@ -40,6 +40,6 @@ body{
 
 }
 .donate{
-    margin-top: 6vw;
+    margin-top: 5vw;
     padding: 10px 35px;
 }
