@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="instamojo.css">
+    <script src="https://js.instamojo.com/v1/checkout.js"></script>
+    <script>
+      /* Start client-defined Callback Handler Functions */
+      function onOpenHandler () {
+        alert('Payments Modal is Opened');
+      }
+
+      function onCloseHandler () {
+        alert('Payments Modal is Closed');
+      }
+
+      function onPaymentSuccessHandler (response) {
+        alert('Payment Success');
+        console.log('Payment Success Response', response);
+      }
+
+      function onPaymentFailureHandler (response) {
+        alert('Payment Failure');
+        console.log('Payment Failure Response', response);
+      }
+      /* End client-defined Callback Handler Functions */
+
+      /* Configuring Handlers */
+      Instamojo.configure({
+        handlers: {
+          onOpen: onOpenHandler,
+          onClose: onCloseHandler,
+          onSuccess: onPaymentSuccessHandler,
+          onFailure: onPaymentFailureHandler
+        }
+      });
+      
+      function onButtonClick() {
+        Instamojo.open('https://test.instamojo.com/@shivangisoni007');
+      }
+    </script>
+  </head>
+  <body>
+    <div class="heading">
+        <h1>Donation!</h1>
+    </div>
+  <div class="main_container">
+    <div class="form">
+      <input type="text" class="donate-form-text" placeholder="Name">
+      <input type="text" class="donate-form-text" placeholder="Email">
+    </div>
+    <button class="donate" onclick="onButtonClick()">
+      Donate
+    </button>
+  </body>
+</html>
